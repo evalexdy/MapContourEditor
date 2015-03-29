@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="stylesheets/pygment_trac.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="javascripts/script.js"></script>
+  <script type="text/javascript" src="javascripts/mapcontoureditor.min.js"></script>
 
   <title>Map Contour Editor (jQuery)</title>
   <meta name="description" content="Editor for imagemap polygons with &quot;magic wand&quot; like tool">
@@ -42,6 +43,45 @@
 <p>When you are need to make contour map for some image you can use this contour editor - very simple and very useful.</p>
 
 <p>You can create new imagemap polygon or you can use "magicStick" (which similar to Photoshop's "Magic Wand" tool).</p>
+
+<input type="button" id="magicStick" value="Disable magic stick">
+	<input type="button" id="destroy" value="Destroy">
+	<br />
+	<img src="images/ex_my.png" class="contourmap">
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			setTimeout(function(){initMapContour()},500);
+		});
+		function initMapContour(){
+			//Delayed init, because we have to make sure, that all images are loaded
+			$('.contourmap').mapContourEditor({contour:[55,63,18,87,12,34]});
+			
+			$('#magicStick').click(function(){
+				//Set magic stick and change button #magicStick caption
+				$('.contourmap').mapContourEditor('setData',{magicStick:1});
+				
+				if($('.contourmap').mapContourEditor('getData','magicStick')==1){
+					$('#magicStick').attr('value','Disable magic stick');
+				} else {
+					$('#magicStick').attr('value','Enable magic stick');
+				}
+			});
+			
+			$('.contourmap').on('magicStickChange',function(){
+				//if event magicStickChange has occured - change button #magickStick caption
+				if($('.contourmap').mapContourEditor('getData','magicStick')==1){
+					$('#magicStick').attr('value','Disable magic stick');
+				} else {
+					$('#magicStick').attr('value','Enable magic stick');
+				}
+			});
+
+			$('#destroy').click(function(){
+				$('.contourmap').mapContourEditor('destroy');
+			});
+		}
+	</script>
 
 <h2>
 <a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h2>
