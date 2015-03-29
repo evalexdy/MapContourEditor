@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Map Contour Editor (jQuery)</title>
+  <meta name="description" content="Editor for imagemap polygons with &quot;magic wand&quot; like tool">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Map Contour Editor (jQuery)</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Editor for imagemap polygons with &quot;magic wand&quot; like tool</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/evalexdy/MapContourEditor/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/evalexdy/MapContourEditor/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/evalexdy/MapContourEditor" class="code">View Map Contour Editor (jQuery) on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a id="map-contour-editor-jquery" class="anchor" href="#map-contour-editor-jquery" aria-hidden="true"><span class="octicon octicon-link"></span></a>Map Contour Editor (jQuery)</h1>
+
+<p>When you are need to make contour map for some image you can use this contour editor - very simple and very useful.</p>
+
+<p>You can create new imagemap polygon or you can use "magicStick" (which similar to Photoshop's "Magic Wand" tool).</p>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use</h2>
+
+<p>Just use it like this: <code>$(NeededElement).mapContourEditor(Start variables);</code> where NeededElement is an image on your page. After that, you can create new contour manually or semi-automatic by using "magicStick" tool</p>
+
+<p>In simple mode you can create new contour point by click on image, remove points by right click, drag and drop points.</p>
+
+<p>In 'magicStick' polygon will be created by simple click on image</p>
+
+<h2>
+<a id="predefined-variables" class="anchor" href="#predefined-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predefined variables</h2>
+
+<p><code>contour:{}</code> - points array x,y,x1,y1,...,xn,yn</p>
+
+<p><code>tolerance:20</code> - color tolerance for 'magic wand' mode</p>
+
+<p><code>cback:'rgba(120,0,0,0.3)'</code> - contour background color</p>
+
+<p><code>cborder:'rgba(255,0,0,0.3)'</code> - contour border color</p>
+
+<p><code>msize:2</code> - marker size</p>
+
+<p><code>mback:'rgba(255,255,255,0.5)'</code> - marker background color</p>
+
+<p><code>mborder:'rgba(255,0,0,0.5)'</code> - marker border color</p>
+
+<p><code>magicStick:1</code> - "magic stick" tool mode 0 - disabled, 1 - enabled</p>
+
+<h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h2>
+
+<p><code>getData</code> - you have to use it like this: <code>$('NeededElement').mapContourEditor('getData','magicStick')</code> to receive value of <code>magicStick</code> variable</p>
+
+<p><code>setData</code> - set needed variable, for example: <code>$('NeededElement').mapContourEditor('setData',{magicStick:1});</code></p>
+
+<p><code>destroy</code> - remove editor object from element <code>$('NeededElement').mapContourEditor('destroy');</code></p>
+
+<h2>
+<a id="events" class="anchor" href="#events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events</h2>
+
+<p>There is a only one event now: 'magicStickChange'. Use it like this: $('.contourmap').on('magicStickChange',function(){Magic Stick mode changing handler});</p>
+
+<h2>
+<a id="analyzed-and-used" class="anchor" href="#analyzed-and-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Analyzed and Used</h2>
+
+<p><a href="https://github.com/fahrenheit-marketing/jquery-canvas-area-draw">https://github.com/fahrenheit-marketing/jquery-canvas-area-draw</a> - editor</p>
+
+<p><a href="https://github.com/mourner/simplify-js">https://github.com/mourner/simplify-js</a> - path points simplifier</p>
+
+<p>Moore Neiborhood algorithm for contour tracing</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/evalexdy" class="avatar"><img src="https://avatars3.githubusercontent.com/u/10105132?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/evalexdy">evalexdy</a> maintains <a href="https://github.com/evalexdy/MapContourEditor">Map Contour Editor (jQuery)</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/evalexdy/MapContourEditor/tarball/master" class="tar">tar</a><a href="https://github.com/evalexdy/MapContourEditor/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
