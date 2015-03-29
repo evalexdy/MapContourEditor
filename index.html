@@ -1,0 +1,51 @@
+<!DOCTYPE>
+<html>
+<head>
+	<title>MapContour</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	
+	<script language="javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/mapcontoureditor.js"></script>
+	
+</head>
+<body>
+	<input type="button" id="magicStick" value="Disable magic stick">
+	<input type="button" id="destroy" value="Destroy">
+	<br />
+	<img src="ex_my.png" class="contourmap">
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			setTimeout(function(){initMapContour()},500);
+		});
+		function initMapContour(){
+			//Delayed init, because we have to make sure, that all images are loaded
+			$('.contourmap').mapContourEditor({contour:[55,63,18,87,12,34]});
+			
+			$('#magicStick').click(function(){
+				//Set magic stick and change button #magicStick caption
+				$('.contourmap').mapContourEditor('setData',{magicStick:1});
+				
+				if($('.contourmap').mapContourEditor('getData','magicStick')==1){
+					$('#magicStick').attr('value','Disable magic stick');
+				} else {
+					$('#magicStick').attr('value','Enable magic stick');
+				}
+			});
+			
+			$('.contourmap').on('magicStickChange',function(){
+				//if event magicStickChange has occured - change button #magickStick caption
+				if($('.contourmap').mapContourEditor('getData','magicStick')==1){
+					$('#magicStick').attr('value','Disable magic stick');
+				} else {
+					$('#magicStick').attr('value','Enable magic stick');
+				}
+			});
+
+			$('#destroy').click(function(){
+				$('.contourmap').mapContourEditor('destroy');
+			});
+		}
+	</script>
+</body>
+</html>
