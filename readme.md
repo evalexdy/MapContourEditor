@@ -40,7 +40,7 @@ In 'magicStick' polygon will be created by simple click on image
 
 # Events
 
-There is a only one event now: 'magicStickChange'. Use it like this: $('.contourmap').on('magicStickChange',function(){Magic Stick mode changing handler});
+There is a only one event now: 'magicStickChange'. Use it like this: $('NeededElement').on('magicStickChange',function(){Magic Stick mode changing handler});
 
 
 # Analyzed and Used
