@@ -44,9 +44,11 @@
 
 <p>You can create new imagemap polygon or you can use "magicStick" (which similar to Photoshop's "Magic Wand" tool).</p>
 <p><input type="button" id="magicStick" value="Disable magic stick">
+<input type="button" id="getCoords" value="Get contour data">
 	<input type="button" id="destroy" value="Destroy">
 	<br />
 	<img src="images/ex_my.png" class="contourmap"></p>
+	<div style="width:300px; height:150px; background:#eee;" id="coord_data"></div>
 	<p>Just enable magic stick mode and left click on any white figure and you'll get new contour</p>
 	
 	<script type="text/javascript">
@@ -56,6 +58,11 @@
 		function initMapContour(){
 			//Delayed init, because we have to make sure, that all images are loaded
 			$('.contourmap').mapContourEditor({contour:[55,63,18,87,12,34]});
+			
+			$('#getCoords').click(function(){
+				//Get current contour coordinates
+				$('#coord_data').html($('.contourmap').mapContourEditor('getData','contour'));
+			});
 			
 			$('#magicStick').click(function(){
 				//Set magic stick and change button #magicStick caption
