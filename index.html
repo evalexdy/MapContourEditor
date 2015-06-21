@@ -61,7 +61,7 @@
 			
 			$('#getCoords').click(function(){
 				//Get current contour coordinates
-				$('#coord_data').html($('.contourmap').mapContourEditor('getData','contour'));
+				$('#coord_data').html($('.contourmap').mapContourEditor('getData','contour').join());
 			});
 			
 			$('#magicStick').click(function(){
