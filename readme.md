@@ -42,6 +42,9 @@ In 'magicStick' polygon will be created by simple click on image
 
 There is a only one event now: 'magicStickChange'. Use it like this: $('NeededElement').on('magicStickChange',function(){Magic Stick mode changing handler});
 
+# Demo
+
+Small demo you can find here: http://evalexdy.github.io/MapContourEditor/
 
 # Analyzed and Used
 

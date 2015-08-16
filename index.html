@@ -13,7 +13,12 @@
 	<input type="button" id="getCoords" value="Get contour data">
 	<input type="button" id="destroy" value="Destroy">
 	<br />
+<<<<<<< HEAD
 	<img src="ex_my.png" class="contourmap"><br />
+=======
+	<img src="ex_my.png" class="contourmap">
+	<br />
+>>>>>>> origin/master
 	<div style="width:300px; height:150px; background:#eee; overflow:auto;" id="coord_data"></div>
 	
 	<script type="text/javascript">
@@ -46,6 +51,11 @@
 				} else {
 					$('#magicStick').attr('value','Enable magic stick');
 				}
+			});
+			
+			$('#getCoords').click(function(){
+				//Get current contour coordinates
+				$('#coord_data').html($('.contourmap').mapContourEditor('getData','contour').join());
 			});
 
 			$('#destroy').click(function(){
